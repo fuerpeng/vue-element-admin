@@ -53,6 +53,7 @@ const Theme = resolve => require(['../views/theme/index'], resolve);
 /* example*/
 const DynamicTable = resolve => require(['../views/example/dynamictable'], resolve);
 const Table = resolve => require(['../views/example/table'], resolve);
+const Table2 = resolve => require(['../views/example/table2'], resolve);
 const DragTable = resolve => require(['../views/example/dragTable'], resolve);
 const InlineEditTable = resolve => require(['../views/example/inlineEditTable'], resolve);
 const Form1 = resolve => require(['../views/example/form1'], resolve);
@@ -196,6 +197,7 @@ export const asyncRouterMap = [
                 { path: 'dragtable', component: DragTable, name: '拖拽table' },
                 { path: 'inline_edit_table', component: InlineEditTable, name: 'table内编辑' },
                 { path: 'table', component: Table, name: '综合table' },
+                { path: 'table2', component: Table2, name: '综合table2' },
                 { path: 'form1', component: Form1, name: '综合form1' }
     ]
   },
