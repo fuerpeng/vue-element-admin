@@ -240,6 +240,11 @@ code {
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out
 }
+.length-omit{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 @keyframes octocat-wave {
   0%,

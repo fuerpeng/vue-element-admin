@@ -2,6 +2,7 @@ import Mock from 'mockjs';
 import loginAPI from './login';
 import articleAPI from './article';
 import article_tableAPI from './article_table';
+import notice_tableAPI from './notice_table';
 import remoteSearchAPI from './remoteSearch';
 
 
@@ -16,6 +17,7 @@ Mock.mock(/\/article\/detail/, 'get', articleAPI.getArticle);
 
 // // table example相关
 Mock.mock(/\/article_table\/list/, 'get', article_tableAPI.getList);
+Mock.mock(/\/notice_table\/list/, 'get', notice_tableAPI.getList);
 Mock.mock(/\/article_table\/p/, 'get', article_tableAPI.getPv);
 
 // // 搜索相关

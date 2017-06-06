@@ -6,7 +6,7 @@ import permission from './modules/permission';
 import getters from './getters';
 
 Vue.use(Vuex);
-
+console.log(Vuex);
 const store = new Vuex.Store({
   modules: {
     app,

@@ -54,6 +54,7 @@ const Theme = resolve => require(['../views/theme/index'], resolve);
 const DynamicTable = resolve => require(['../views/example/dynamictable'], resolve);
 const Table = resolve => require(['../views/example/table'], resolve);
 const Table2 = resolve => require(['../views/example/table2'], resolve);
+
 const DragTable = resolve => require(['../views/example/dragTable'], resolve);
 const InlineEditTable = resolve => require(['../views/example/inlineEditTable'], resolve);
 const Form1 = resolve => require(['../views/example/form1'], resolve);
@@ -61,6 +62,9 @@ const Form1 = resolve => require(['../views/example/form1'], resolve);
 /* permission */
 const Permission = resolve => require(['../views/permission/index'], resolve);
 
+/* homeSchool */
+const noticeTable = resolve => require(['../views/homeSchool/noticeTable'], resolve);
+const UEditor = resolve => require(['../views/homeSchool/UEditor'], resolve);
 
 Vue.use(Router);
 
@@ -199,6 +203,17 @@ export const asyncRouterMap = [
                 { path: 'table', component: Table, name: '综合table' },
                 { path: 'table2', component: Table2, name: '综合table2' },
                 { path: 'form1', component: Form1, name: '综合form1' }
+    ]
+  },
+  {
+    path: '/homeSchool',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '家校应用',
+    icon: 'zonghe',
+    children: [
+                { path: 'noticeTable', component: noticeTable, name: '通知公告' },
+                { path: 'UEditor', component: UEditor, name: 'UEditor' },
     ]
   },
   { path: '*', redirect: '/404', hidden: true }

@@ -151,7 +151,7 @@
 </template>
 
 <script>
-    import { fetchList, fetchPv } from 'api/article_table';
+    import { fetchList, fetchPv, getCity } from 'api/article_table';
     import { parseTime } from 'utils';
 
     const calendarTypeOptions = [
@@ -231,6 +231,11 @@
             console.log(this.list);
             this.total = response.data.total;
             this.listLoading = false;
+          })
+          getCity().then(response => {
+            console.log(response);
+          }).catch(error => {
+            console.log(error);
           })
         },
         handleFilter() {

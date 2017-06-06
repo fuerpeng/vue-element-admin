@@ -1,5 +1,5 @@
 import fetch from 'utils/fetch';
-
+import axios from 'axios';
 export function fetchList(query) {
   return fetch({
     url: '/article_table/list',
@@ -14,4 +14,8 @@ export function fetchPv(pv) {
     method: 'get',
     params: { pv }
   });
+}
+
+export function getCity() {
+  return axios.get('/v1/cities')
 }
