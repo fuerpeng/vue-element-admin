@@ -2,8 +2,8 @@
   <div class="app-container calendar-list-container">
     <div class="filter-container">
       
-      <el-button class="filter-item" style="margin-left: 10px;" @click="handleCreate" type="primary" icon="edit">发通知</el-button>
-      <el-button class="filter-item" type="primary" icon="delete">删除</el-button>
+      <el-button class="filter-item" v-waves style="margin-left: 10px;" @click="handleCreate" type="primary" icon="edit">发通知</el-button>
+      <el-button class="filter-item" v-waves type="primary" icon="delete">删除</el-button>
      
       <el-input @keyup.enter.native="handleFilter" style="width: 200px;" class="filter-item" placeholder="公告标题" v-model="listQuery.title">
       </el-input>
@@ -229,7 +229,9 @@
 
       },
       mounted() {
-        
+        //测试jQuery 写法
+        var aa = $(".el-button");
+        console.log(aa);
       },
       filters: {
         statusFilter(status) {

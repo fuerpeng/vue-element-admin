@@ -20,7 +20,6 @@ import Sticky from 'components/Sticky'; // 粘性header组件
 import vueWaves from './directive/waves';// 水波纹指令
 import errLog from 'store/errLog';// error log组件
 import './mock/index.js';  // 该项目所有请求使用mockjs模拟
-import 'babel-polyfill';
 import AV from 'leancloud-storage'; //leancloud
 var APP_ID = 'w6rFNVxEF3xUxC4Palz0DWYy-gzGzoHsz';
 var APP_KEY = 'PE9pN56nBOtF9lW39DuOuwM8';
@@ -37,10 +36,10 @@ Vue.use(ElementUI);
 Vue.use(vueWaves);
 
 // register global utility filters.
+// filter:{parseTime:function(){},timeAgo:function(){},formatTime:function(){}}
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 });
-
 // permissiom judge
 function hasPermission(roles, permissionRoles) {
   if (roles.indexOf('admin') >= 0) return true; // admin权限 直接通过

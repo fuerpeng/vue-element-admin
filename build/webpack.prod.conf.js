@@ -9,8 +9,15 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
-var env = process.env.NODE_ENV === 'production' ? config.build.prodEnv : config.build.sitEnv
+// var env = process.env.NODE_ENV === 'production' ? config.build.prodEnv : config.build.sitEnv
 
+if(process.env.NODE_ENV === 'production'){
+    var env = config.build.prodEnv
+}else if(process.env.NODE_ENV === 'sit'){
+    var env = config.build.sitEnv
+}else if(process.env.NODE_ENV === 'test'){
+    var env = config.build.testEnv
+}
 function resolveApp(relativePath) {
     return path.resolve(relativePath);
 }
